@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>House Price Prediction</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button.btn-submit {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.btn-submit:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    h2.prediction {
+      color: #00a74a;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="C:\Users\Raj\Desktop\House Prediction Model\templates\home.png" title="house icons">House icons created by Freepik - Flaticon</a>
+    <h1>House Price Prediction</h1>
+    <form action="/predict" method="post">
+      <label for="area">Area (in square feet):</label>
+      <input type="text" id="area" name="area" placeholder="Enter area" /><br><br>
+      <button class="btn-submit" type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result" id="result">
+      <h2 class="prediction">Price: ${{ prediction }}</h2>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
